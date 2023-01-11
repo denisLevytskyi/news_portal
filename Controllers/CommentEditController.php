@@ -14,7 +14,8 @@ class CommentEditController {
 		$text = $_POST['comment_edit_text'];
 		$model = new Models\CommentModel();
 		if ( ($model->get_comment_update($id, $text)) ) {
-			header('Location: /');
+			$location = 'Location: /post.php/?post_id=' . $_SESSION['post']['body']['id'];
+			header($location);
 		} else {
 			ErrorController::get_view_error(27);
 		}
