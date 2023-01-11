@@ -1,0 +1,62 @@
+body {
+    background: grey;
+}
+
+.login {
+    position: fixed;
+    background: black;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    right: 0;
+    bottom: 20px;
+    opacity: 0.5;
+}
+
+.login:hover {
+    opacity: 1;
+}
+
+.auth {
+    position: fixed;
+    background: black;
+    color: white;
+    padding: 5px;
+    right: 0;
+    bottom: 15px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    min-width: 220px;
+    font-size: 15px;
+}
+
+.auth:hover {
+    opacity: 1;
+}
+
+.authImg {
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    border: 1px solid white;
+    background: white;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.authWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.authWrapName {
+    text-decoration: underline;
+}
+
+.authWrapLink {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 2px 0;
+}
