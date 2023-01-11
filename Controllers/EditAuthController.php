@@ -28,7 +28,7 @@ class EditAuthController {
 			$file = $_FILES['edit_auth_photo'];
 			$photo = $this->set_move_photo($file);
 		}
-		if ( ($model->get_update($id, $login, $password, $name, $photo, $role)) ) {
+		if ( ($model->get_user_update($id, $login, $password, $name, $photo, $role)) ) {
 			header('Location: /');
 		} else {
 			ErrorController::get_view_error(8);
@@ -44,7 +44,7 @@ class EditAuthController {
 	protected function set_delete () {
 		$model = new Models\AuthModel();
 		$id = $_SESSION['auth']['id'];
-		if ( ($model->get_delete($id)) ) {
+		if ( ($model->get_user_delete($id)) ) {
 			header('Location: /?auth_disconnect=1');
 		} else {
 			ErrorController::get_view_error(10);
@@ -52,7 +52,7 @@ class EditAuthController {
 	}
 
 	public function get_edit_auth_check () {
-		if (isset($_GET['auth_delete'])) {
+		if (isset($_GET['edit_auth_delete'])) {
 			$this->set_delete();
 		} elseif (empty($_POST['edit_auth_1'])) {
 			$this->set_login_check();

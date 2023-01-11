@@ -39,6 +39,16 @@ class RegistrationController {
 		}
 	}
 
+	protected function get_email_check () {
+		$login = $_POST['registration_login'];
+		$model = new Models\AuthModel();
+		if ( ($model->get_user_data('login', $login, 'login', $login)) ) {
+			ErrorController::get_view_error(11);
+		} else {
+			$this->send_pin();
+		}
+	}
+
 	protected function get_check_pin () {
 		if ($_POST['registration_pin'] == $_SESSION['registration_pin']) {
 			$this->set_registration();
@@ -55,7 +65,7 @@ class RegistrationController {
 		} elseif (empty($_POST['registration_1'])) {
 			$this->view_registration1();
 		} elseif ($_POST['registration_password_1'] == $_POST['registration_password_2']) {
-			$this->send_pin();
+			$this->get_email_check();
 			$this->view_registration2();
 		} else {
 			ErrorController::get_view_error(3);

@@ -48,7 +48,7 @@
 				<a href="/list.php?list_id=*" class="categoryWrapA">
 					УСІ НОВИНИ
 				</a>
-				<?php foreach ($_SESSION['index']['category'] as $k => $v) { ?>
+				<?php foreach ($_SESSION['list']['category'] as $k => $v) { ?>
 					<a href="/list.php?list_id=<?php echo $k; ?>" class="categoryWrapA">
 						<?php echo $v; ?>
 					</a>
@@ -59,11 +59,11 @@
 	<section class="list">
 		<div class="container">
 			<h2 class="listH2">
-				Останні дописи:
+				Новини за обраною категорією:
 			</h2>
 			<div class="listWrap">
-				<?php if (!empty($_SESSION['index']['new'])) {
-					foreach ($_SESSION['index']['new'] as $k => $v) { ?>
+				<?php if (!empty($_SESSION['list']['news'])) {
+					foreach ($_SESSION['list']['news'] as $k => $v) { ?>
 						<div class="listWrapItem">
 							<img src="<?php echo $v['photo']; ?>" alt="img" class="listWrapItemImg">
 							<div class="listWrapItemWrap">
@@ -82,34 +82,9 @@
 					</p>
 				<?php } ?>
 			</div>
-		</div>
-	</section>
-	<section class="list">
-		<div class="container">
-			<h2 class="listH2">
-				Популярні дописи:
-			</h2>
-			<div class="listWrap">
-				<?php if (!empty($_SESSION['index']['top'])) {
-					foreach ($_SESSION['index']['top'] as $k => $v) { ?>
-						<div class="listWrapItem">
-							<img src="<?php echo $v['photo']; ?>" alt="img" class="listWrapItemImg">
-							<div class="listWrapItemWrap">
-								<h3 class="listWrapItemWrapH3">
-									<?php echo $v['header']; ?>
-								</h3>
-								<a href="/post.php?post_id=<?php echo $v['id']; ?>" class="listWrapItemWrapA">
-									<?php echo $v['text_first']; ?>
-								</a>
-							</div>
-						</div>
-					<?php }
-				} else { ?>
-					<p class="listWrapP">
-						Нажаль, новини поки выдсутні
-					</p>
-				<?php } ?>
-			</div>
+			<a href="/" class="listA">
+				На головну!
+			</a>
 		</div>
 	</section>
 </body>

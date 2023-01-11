@@ -12,6 +12,7 @@ class AuthModel {
 				return $record;
 			}
 		}
+		return false;
 	}
 
 	public function get_user_registration ($login, $password, $name, $photo = '/Materials/no_photo.png', $role = '1') {
@@ -20,22 +21,24 @@ class AuthModel {
 		$rezult = mysqli_query($connection, $request);
 		if ( $rezult == 1 ) {
 			return $this->get_user_data('login', $login, 'password', $password);
+		} else {
+			return false;
 		}
 	}
 
-	public function get_update ($id, $login, $password, $name, $photo, $role) {
+	public function get_user_update ($id, $login, $password, $name, $photo, $role) {
 		$connection = Logics\Connection::get_connection();
 		$request = "UPDATE users SET login = '$login', password = '$password', name = '$name', photo = '$photo', role = '$role' WHERE id = '$id'";
 		return mysqli_query($connection, $request);
 	}
 
-	public function get_delete ($id) {
+	public function get_user_delete ($id) {
 		$connection = Logics\Connection::get_connection();
 		$request = "DELETE FROM users WHERE id = '$id'";
 		return mysqli_query($connection, $request);
 	}
 
-	public function get_reset ($login, $password) {
+	public function get_user_reset ($login, $password) {
 		$connection = Logics\Connection::get_connection();
 		$request = "UPDATE users SET password = '$password' WHERE login = '$login'";
 		return mysqli_query($connection, $request);

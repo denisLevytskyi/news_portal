@@ -42,7 +42,7 @@
 				<input type="file" class="editAuthFormInp" name="edit_auth_photo">
 				<input type="text" style="display: none;" name="edit_auth_1" value="1" required>
 				<button type="confirm" class="editAuthFormBtn">Редагувати</button>
-				<a class="editAuthFormA" href="/editAuth.php/?auth_delete=1">Видалити профіль!</a>
+				<a class="editAuthFormA" href="/editAuth.php/?edit_auth_delete=1">Видалити профіль!</a>
 				<a class="editAuthFormA" href="/">На головну!</a>
 			</form>
 		</div>

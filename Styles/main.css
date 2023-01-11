@@ -11,6 +11,10 @@ div, p, input, button, form, span, a, ul, li, pre {
     margin: 0;
 }
 
+body {
+    min-width: 1000px;
+}
+
 body, button {
     font-family: 'Roboto', sans-serif;
     padding: 0;
@@ -61,6 +65,7 @@ input, textarea, select {
 .container {
     max-width: 90%;
     margin: 0 auto;
+    padding: 0.1px;
 }
 
 .headerWrap {
@@ -80,4 +85,48 @@ input, textarea, select {
 
 section {
     margin: 25px auto;
+}
+
+.auth {
+    position: fixed;
+    background: black;
+    color: white;
+    padding: 5px;
+    right: 0;
+    bottom: 15px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    min-width: 220px;
+    font-size: 15px;
+}
+
+.auth:hover {
+    opacity: 1;
+}
+
+.authImg {
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
+    border: 1px solid white;
+    background: white;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.authWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.authWrapName {
+    text-decoration: underline;
+}
+
+.authWrapLink {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 2px 0;
 }

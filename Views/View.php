@@ -27,6 +27,26 @@ class View {
 	}
 
 	public function view_edit_auth () {
-		require_once "Templates/edit_auth.php";
+		require_once "Templates/editAuth.php";
+	}
+
+	public function view_create_post () {
+		require_once "Templates/createPost.php";
+	}
+
+	public function view_list () {
+		require_once "Templates/list.php";
+	}
+
+	public function view_post () {
+		require_once "Templates/post.php";
+	}
+
+	public function view_post_edit () {
+		require_once "Templates/postEdit.php";
+	}
+
+	public function view_comment_edit () {
+		require_once "Templates/commentEdit.php";
 	}
 }

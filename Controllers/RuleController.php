@@ -25,6 +25,7 @@ class RuleController {
 			$_SESSION['auth']['id'] = $_COOKIE['auth_id'];
 			$this->set_data_by_id();
 		} else {
+			$_SESSION['auth']['id'] = 0;
 			$_SESSION['auth']['name'] = 'Guest';
 			$_SESSION['auth']['role'] = 0;
 		}

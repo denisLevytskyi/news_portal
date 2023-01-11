@@ -17,46 +17,173 @@ body {
     opacity: 1;
 }
 
-.auth {
-    position: fixed;
+.container {
+    background: white;
+    border-radius: 15px;
+}
+
+.categoryWrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.categoryWrapA {
+    margin: 5px 10px;
+    padding: 5px 10px;
     background: black;
     color: white;
-    padding: 5px;
-    right: 0;
-    bottom: 15px;
-    opacity: 0.8;
+    border-radius: 100px;
+}
+
+.listH2 {
+    margin: 5px 0 0 5px;
+}
+
+.listWrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+}
+
+.listWrapP {
+    margin: 5px;
+}
+
+.listWrapItem {
+    width: 350px;
     display: flex;
     align-items: center;
     justify-content: left;
-    min-width: 220px;
-    font-size: 15px;
+    margin: 10px;
+    border: 0.5px solid black;
 }
 
-.auth:hover {
-    opacity: 1;
-}
-
-.authImg {
-    height: 50px;
-    width: 50px;
-    border-radius: 100px;
-    border: 1px solid white;
-    background: white;
-    margin-right: 15px;
+.listWrapItemImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
     object-fit: cover;
 }
 
-.authWrap {
-    display: flex;
-    flex-direction: column;
+.listWrapItemWrap {
+    margin: 0 10px;
+    width: fit-content;
 }
 
-.authWrapName {
-    text-decoration: underline;
+.listWrapItemWrapH3 {
+    font-size: 20px;
 }
 
-.authWrapLink {
+.listWrapItemWrapA {
+    font-size: 10px;
+}
+
+.listA {
+    margin: 10px;
+    color: blue;
+}
+
+.post .container {
+    min-height: 500px;
+    width: 900px;
+}
+.postH2 {
+    text-align: center;
+    margin: 10px;
+}
+
+.postImg {
+    float: left;
+    min-height: 150px;
+    max-height: 500px;
+    max-width: 300px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.postP {
+    padding: 7px;
+}
+
+.postInfo {
+    color: grey;
     font-size: 12px;
-    font-weight: normal;
-    margin: 2px 0;
+    padding: 7px;
+    text-align: right;
+}
+
+.postA {
+    margin: 7px;
+    color: blue;
+}
+
+.comments .container {
+    width: 900px;
+}
+
+.commentsWrap {
+    padding: 10px;
+}
+
+.commentsWrapItem {
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    border: 0.5px solid black;
+    margin: 5px 0;
+}
+
+.commentsWrapItemImg {
+    height: 70px;
+    width: 70px;
+    border-radius: 10px;
+    margin: 10px 25px 0 0;
+}
+
+.commentsWrapItemWrapInfo {
+    color: grey;
+    font-size: 12px;
+    padding: 7px 0;
+}
+
+.commentsWrapItemWrapA {
+    color: grey;
+    font-size: 12px;
+    padding: 7px 0;
+}
+
+.comment .container {
+    width: 900px;
+}
+
+.commentP {
+    text-align: center;
+    margin: 25px;
+    display: block;
+}
+
+.commentA {
+    margin: 7px;
+    color: blue;
+}
+
+.commentForm {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.commentFormInp {
+    resize: none;
+    width: 600px;
+    margin-bottom: 0;
+}
+
+.commentFormBtn {
+    width: 200px;
 }
