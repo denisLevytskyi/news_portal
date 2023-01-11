@@ -19,7 +19,7 @@ class RuleController {
 	}
 
 	protected function get_auth_check() {
-		if (isset($_SESSION['auth']['id'])) {
+		if (isset($_SESSION['auth']['id']) and $_SESSION['auth']['id'] != 0) {
 			$this->set_data_by_id();
 		} elseif (isset($_COOKIE['auth_id'])) {
 			$_SESSION['auth']['id'] = $_COOKIE['auth_id'];
