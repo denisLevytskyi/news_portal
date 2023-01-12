@@ -20,7 +20,7 @@ class SignController {
 			$_SESSION['auth']['id'] = $data['id'];
 			header('Location: /index.php');
 		} else {
-			ErrorController::get_view_error(2);
+			ErrorController::get_error(2);
 		}
 	}
 

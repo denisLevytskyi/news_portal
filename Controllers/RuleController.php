@@ -14,7 +14,7 @@ class RuleController {
 			$_SESSION['auth']['role'] = $data['role'];
 		} else {
 			$this->set_disconnect();
-			ErrorController::get_view_error(1);
+			ErrorController::get_error(1);
 		}
 	}
 

@@ -53,3 +53,10 @@ echo "<br><br>===== POSTS TABLE =============================<br>";
 var_dump($rezult2);
 echo "<br><br>===== COMMENTS TABLE ==========================<br>";
 var_dump($rezult3);
+
+if ($rezult1) {
+	$connection = Logics\Connection::get_connection();
+	$request = "INSERT INTO users (login, password, name, photo, role) VALUES ('admin@admin', '123456', 'Admin', '/Materials/no_photo.png', '2')";
+	$rezult = mysqli_query($connection, $request);
+	echo '= = = = = ADMIN PROFILE: Login->admin@admin Password->123456 = = = = =';
+}

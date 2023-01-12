@@ -1,13 +1,13 @@
 body {
-    background: grey;
+	background: grey;
 }
 
 .registrationForm {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	max-width: 400px;
+	margin: auto;
+	background: white;
+	padding: 10px;
+	border-radius: 10px;
 }

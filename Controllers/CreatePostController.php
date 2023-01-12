@@ -36,13 +36,13 @@ class CreatePostController {
 		if ( ($model->get_post_registration($data)) ) {
 			header('Location: /');
 		} else {
-			ErrorController::get_view_error(14);
+			ErrorController::get_error(14);
 		}
 	}
 
 	protected function get_auth_check () {
 		if ($_SESSION['auth']['role'] == 0) {
-			ErrorController::get_view_error(13);
+			ErrorController::get_error(13);
 		} else {
 			$this->view_create_post();
 		}

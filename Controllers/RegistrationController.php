@@ -15,8 +15,7 @@ class RegistrationController {
 	}
 
 	protected function send_pin () {
-		// $pin = rand(1000, 9999);
-		$pin = 1;
+		$pin = rand(1000, 9999);
 		$text = 'Шановний ' . $_POST['registration_name'] .', це Ваш код для підтвердження реєстрації: ' . $pin;
 		$mail1_to = $_POST['registration_login'];
 		$headers="From: News Portal <news@news.ua>\nReply-to:news@news.ua\nContent-Type: text/html; charset=\"utf-8\"\n";
@@ -35,7 +34,7 @@ class RegistrationController {
 			$_SESSION['auth']['id'] = $data['id'];
 			header('Location: /');
 		} else {
-			ErrorController::get_view_error(5);
+			ErrorController::get_error(5);
 		}
 	}
 
@@ -43,7 +42,7 @@ class RegistrationController {
 		$login = $_POST['registration_login'];
 		$model = new Models\AuthModel();
 		if ( ($model->get_user_data('login', $login, 'login', $login)) ) {
-			ErrorController::get_view_error(11);
+			ErrorController::get_error(11);
 		} else {
 			$this->send_pin();
 		}
@@ -54,7 +53,7 @@ class RegistrationController {
 			$this->set_registration();
 			unset($_SESSION['registration_pin']);
 		} else {
-			ErrorController::get_view_error(4);
+			ErrorController::get_error(4);
 		}
 	}
 
@@ -68,7 +67,7 @@ class RegistrationController {
 			$this->get_email_check();
 			$this->view_registration2();
 		} else {
-			ErrorController::get_view_error(3);
+			ErrorController::get_error(3);
 		}
 	}
 }

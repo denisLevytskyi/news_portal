@@ -15,7 +15,7 @@ class ResetController {
 		if ( ($model->get_user_reset($login, $password)) ) {
 			header('Location: /');
 		} else {
-			ErrorController::get_view_error(6);
+			ErrorController::get_error(6);
 		}
 	}
 
@@ -34,7 +34,7 @@ class ResetController {
 		if ( ($model->get_user_data('login', $login, 'login', $login)) ) {
 			$this->get_new_password();
 		} else {
-			ErrorController::get_view_error(12);
+			ErrorController::get_error(12);
 		}
 	}
 

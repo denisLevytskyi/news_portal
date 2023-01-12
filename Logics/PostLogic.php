@@ -1,3 +1,3 @@
 <?php
-$list = new Controllers\PostController();
-$list->get_post_check();
+$post = new Controllers\PostController();
+$post->get_post_check();

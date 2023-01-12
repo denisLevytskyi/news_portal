@@ -31,7 +31,7 @@ class PostEditController {
 		if ( ($model->get_post_update($id, $category, $photo, $header, $text_first, $text_full)) ) {
 			header('Location: /');
 		} else {
-			ErrorController::get_view_error(22);
+			ErrorController::get_error(22);
 		}
 	}
 
@@ -40,27 +40,27 @@ class PostEditController {
 		$id = $_GET['post_edit_id'];
 		if ( ($data = $model->get_post_by_id($id)) ) {
 			$_SESSION['post_edit'] = $data;
-			$this->view_post_edit();
+			$this->get_auth_check();
 		} else {
-			ErrorController::get_view_error(20);
+			ErrorController::get_error(20);
 		}
 	}
 
 	protected function get_auth_check () {
-		if ($_SESSION['auth']['id'] != $_SESSION['post']['body']['auth_id'] and $_SESSION['auth']['role'] != '2') {
-			ErrorController::get_view_error(21);
+		if ($_SESSION['auth']['id'] != $_SESSION['post_edit']['auth_id'] and $_SESSION['auth']['role'] != '2') {
+			ErrorController::get_error(21);
 		} else {
-			$this->set_post_data();
+			$this->view_post_edit();
 		}
 	}
 
 	public function get_post_edit_check () {
 		if (isset($_GET['post_edit_id'])) {
-			$this->get_auth_check();
+			$this->set_post_data();
 		} elseif (isset($_POST['post_edit_text'])) {
 			$this->set_changes();
 		} else {
-			ErrorController::get_view_error(19);
+			ErrorController::get_error(19);
 		}
 	}
 }

@@ -31,13 +31,13 @@ class EditAuthController {
 		if ( ($model->get_user_update($id, $login, $password, $name, $photo, $role)) ) {
 			header('Location: /');
 		} else {
-			ErrorController::get_view_error(8);
+			ErrorController::get_error(8);
 		}
 	}
 
 	protected function set_login_check () {
 		if (empty($_SESSION['auth']['login'])) {
-			ErrorController::get_view_error(9);
+			ErrorController::get_error(9);
 		}
 	}
 
@@ -47,7 +47,7 @@ class EditAuthController {
 		if ( ($model->get_user_delete($id)) ) {
 			header('Location: /?auth_disconnect=1');
 		} else {
-			ErrorController::get_view_error(10);
+			ErrorController::get_error(10);
 		}
 	}
 
@@ -60,7 +60,7 @@ class EditAuthController {
 		} elseif ($_POST['edit_auth_password_1'] == $_POST['edit_auth_password_2']) {
 			$this->set_changes();
 		} else {
-			ErrorController::get_view_error(7);
+			ErrorController::get_error(7);
 		}
 	}
 }

@@ -26,7 +26,7 @@ class PostController {
 			$_SESSION['post']['body'] = $data;
 			$this->set_add_views($id, $data['views']);
 		} else {
-			ErrorController::get_view_error(17);
+			ErrorController::get_error(17);
 		}
 	}
 
@@ -34,11 +34,11 @@ class PostController {
 		$model = new Models\PostModel();
 		$id = $_GET['post_del_id'];
 		if ($_SESSION['auth']['id'] != $_SESSION['post']['body']['auth_id'] and $_SESSION['auth']['role'] != '2') {
-			ErrorController::get_view_error(18);
+			ErrorController::get_error(18);
 		} elseif ( ($model->get_post_delete($id)) ) {
 			header('Location: /');
 		} else {
-			ErrorController::get_view_error(18);
+			ErrorController::get_error(18);
 		}
 	}
 
@@ -64,7 +64,7 @@ class PostController {
 			$location = 'Location: /post.php/?post_id=' . $post_id;
 			header($location);
 		} else {
-			ErrorController::get_view_error(28);
+			ErrorController::get_error(28);
 		}
 	}
 
@@ -75,7 +75,7 @@ class PostController {
 			$location = 'Location: /post.php/?post_id=' . $_SESSION['post']['body']['id'];
 			header($location);
 		} else {
-			ErrorController::get_view_error(23);
+			ErrorController::get_error(23);
 		}
 	}
 
@@ -90,12 +90,12 @@ class PostController {
 			$this->view_post();
 		} elseif (isset($_POST['post_add_comment_text'])) {
 			$this->set_comment_registration();
-		}elseif (isset($_GET['post_del_id'])) {
+		} elseif (isset($_GET['post_del_id'])) {
 			$this->set_post_delete();
 		} elseif (isset($_GET['post_del_comment_id'])) {
 			$this->set_comment_delete();
 		} else {
-			ErrorController::get_view_error(16);
+			ErrorController::get_error(16);
 		}
 	}
 }

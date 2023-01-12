@@ -1,27 +1,27 @@
 body {
-    background: grey;
+	background: grey;
 }
 
 .signForm {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	max-width: 400px;
+	margin: auto;
+	background: white;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .signFormRem {
-    margin: auto auto 10px;
+	margin: auto auto 10px;
 }
 
 .signFormRem * {
-    display: inline;
+	display: inline;
 }
 
 .signFormA {
-    margin: 10px 0 auto auto;
-    color: blue;
-    cursor: pointer;
+	margin: 10px 0 auto auto;
+	color: blue;
+	cursor: pointer;
 }

@@ -1,189 +1,184 @@
 body {
-    background: grey;
+	background: grey;
 }
 
 .login {
-    position: fixed;
-    background: black;
-    color: white;
-    padding: 10px;
-    font-size: 20px;
-    right: 0;
-    bottom: 20px;
-    opacity: 0.5;
+	position: fixed;
+	background: black;
+	color: white;
+	padding: 10px;
+	font-size: 20px;
+	right: 0;
+	bottom: 20px;
+	opacity: 0.5;
 }
 
 .login:hover {
-    opacity: 1;
+	opacity: 1;
 }
 
 .container {
-    background: white;
-    border-radius: 15px;
+	background: white;
+	border-radius: 10px;
 }
 
 .categoryWrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 .categoryWrapA {
-    margin: 5px 10px;
-    padding: 5px 10px;
-    background: black;
-    color: white;
-    border-radius: 100px;
-}
-
-.listH2 {
-    margin: 5px 0 0 5px;
+	margin: 5px 10px;
+	padding: 5px 10px;
+	background: black;
+	color: white;
+	border-radius: 100px;
 }
 
 .listWrap {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: left;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: left;
 }
 
 .listWrapP {
-    margin: 5px;
+	margin: 20px 0;
 }
 
 .listWrapItem {
-    width: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    margin: 10px;
-    border: 0.5px solid black;
+	width: 350px;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	margin: 10px 10px 0 0 ;
+	border: 0.5px solid black;
 }
 
 .listWrapItemImg {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    object-fit: cover;
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
 }
 
 .listWrapItemWrap {
-    margin: 0 10px;
-    width: fit-content;
+	margin: 0 10px;
+	width: fit-content;
 }
 
 .listWrapItemWrapH3 {
-    font-size: 20px;
+	font-size: 20px;
 }
 
 .listWrapItemWrapA {
-    font-size: 10px;
+	font-size: 10px;
 }
 
 .listA {
-    margin: 10px;
-    color: blue;
+	margin: 10px 0;
+	color: blue;
 }
 
 .post .container {
-    min-height: 500px;
-    width: 900px;
+	min-height: 500px;
+	width: 900px;
 }
+
 .postH2 {
-    text-align: center;
-    margin: 10px;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
 .postImg {
-    float: left;
-    min-height: 150px;
-    max-height: 500px;
-    max-width: 300px;
-    object-fit: cover;
-    margin-right: 20px;
+	float: left;
+	min-height: 150px;
+	max-height: 250px;
+	max-width: 300px;
+	object-fit: cover;
+	margin-right: 20px;
 }
 
 .postP {
-    padding: 7px;
+	text-align: justify;
 }
 
 .postInfo {
-    color: grey;
-    font-size: 12px;
-    padding: 7px;
-    text-align: right;
+	color: grey;
+	font-size: 12px;
+	text-align: right;
 }
 
 .postA {
-    margin: 7px;
-    color: blue;
+	color: blue;
+	cursor: pointer;
 }
 
 .comments .container {
-    width: 900px;
-}
-
-.commentsWrap {
-    padding: 10px;
+	width: 900px;
 }
 
 .commentsWrapItem {
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
-    border: 0.5px solid black;
-    margin: 5px 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: left;
+	border: 0.5px solid black;
+	margin: 5px 0;
 }
 
 .commentsWrapItemImg {
-    height: 70px;
-    width: 70px;
-    border-radius: 10px;
-    margin: 10px 25px 0 0;
+	height: 70px;
+	width: 70px;
+	border-radius: 100px;
+	object-fit: cover;
+	margin: 10px 25px 10px 10px;
 }
 
 .commentsWrapItemWrapInfo {
-    color: grey;
-    font-size: 12px;
-    padding: 7px 0;
+	color: grey;
+	font-size: 12px;
+	padding-top: 7px;
 }
 
 .commentsWrapItemWrapA {
-    color: grey;
-    font-size: 12px;
-    padding: 7px 0;
+	color: grey;
+	font-size: 12px;
+	padding-top: 7px;
+}
+
+.commentsWrapP {
+	margin: 20px 0;
+	text-align: center;
 }
 
 .comment .container {
-    width: 900px;
+	width: 900px;
 }
 
 .commentP {
-    text-align: center;
-    margin: 25px;
-    display: block;
+	text-align: center;
+	margin: 20px 0;
 }
 
 .commentA {
-    margin: 7px;
-    color: blue;
+	color: blue;
+	cursor: pointer;
 }
 
 .commentForm {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding: 10px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-around;
+	padding: 10px;
 }
 
 .commentFormInp {
-    resize: none;
-    width: 600px;
-    margin-bottom: 0;
+	resize: none;
+	width: 600px;
+	margin-bottom: 0;
 }
 
 .commentFormBtn {
-    width: 200px;
+	width: 200px;
 }

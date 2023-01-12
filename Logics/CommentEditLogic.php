@@ -1,3 +1,3 @@
 <?php
-$reset = new Controllers\CommentEditController();
-$reset->get_comment_edit_check();
+$comment_edit = new Controllers\CommentEditController();
+$comment_edit->get_comment_edit_check();

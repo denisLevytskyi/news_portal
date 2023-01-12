@@ -17,7 +17,7 @@ class CommentEditController {
 			$location = 'Location: /post.php/?post_id=' . $_SESSION['post']['body']['id'];
 			header($location);
 		} else {
-			ErrorController::get_view_error(27);
+			ErrorController::get_error(27);
 		}
 	}
 
@@ -28,13 +28,13 @@ class CommentEditController {
 			$_SESSION['comment_edit'] = $data;
 			$this->get_auth_check();
 		} else {
-			ErrorController::get_view_error(25);
+			ErrorController::get_error(25);
 		}
 	}
 
 	protected function get_auth_check () {
 		if ($_SESSION['auth']['id'] != $_SESSION['comment_edit']['auth_id'] and $_SESSION['auth']['role'] != '2') {
-			ErrorController::get_view_error(26);
+			ErrorController::get_error(26);
 		} else {
 			$this->view_comment_edit();
 		}
@@ -46,7 +46,7 @@ class CommentEditController {
 		} elseif (isset($_POST['comment_edit_text'])) {
 			$this->set_changes();
 		} else {
-			ErrorController::get_view_error(24);
+			ErrorController::get_error(24);
 		}
 	}
 }

@@ -6,127 +6,131 @@
 */
 
 div, p, input, button, form, span, a, ul, li, pre {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 body {
-    min-width: 1000px;
+	min-width: 1000px;
 }
 
 body, button {
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
-    font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+	font-size: 17px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    font-weight: bold;
+	margin: 0;
+	font-weight: bold;
 }
 
 ul, li {
-    list-style: none;
+	list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 18px;
+	text-decoration: none;
+	color: inherit;
+	font-size: 16px;
 }
 
 button {
-    display: block;
-    background: yellow;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px 0;
-    border: 2px solid black;
-    border-radius: 10px;
-    cursor: pointer;
+	display: block;
+	background: yellow;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 0;
+	border: 2px solid black;
+	border-radius: 10px;
+	cursor: pointer;
 }
 
 button:hover {
-    background: blue;
+	background: blue;
 }
 
 input, textarea, select {
-    display: block;
-    font-weight: bold;
-    padding: 10px 10px;
-    border: 2px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-bottom: 10px;
+	display: block;
+	font-weight: bold;
+	padding: 10px 10px;
+	border: 2px solid black;
+	border-radius: 10px;
+	cursor: pointer;
+	margin-bottom: 10px;
 }
 
 .container {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 0.1px;
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 5px 10px;
+}
+
+.header .container {
+	padding: 0;
 }
 
 .headerWrap {
-    padding: 0 5px;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    background: black;
-    color: white;
+	padding: 0 5px;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	background: black;
+	color: white;
 }
 
 .headerWrapImg {
-    height: 50px;
-    background: white;
+	height: 50px;
+	background: black;
 }
 
 section {
-    margin: 25px auto;
+	margin: 25px auto;
 }
 
 .auth {
-    position: fixed;
-    background: black;
-    color: white;
-    padding: 5px;
-    right: 0;
-    bottom: 15px;
-    opacity: 0.8;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    min-width: 220px;
-    font-size: 15px;
+	position: fixed;
+	background: black;
+	color: white;
+	padding: 5px;
+	right: 0;
+	bottom: 15px;
+	opacity: 0.8;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	min-width: 220px;
+	font-size: 15px;
 }
 
 .auth:hover {
-    opacity: 1;
+	opacity: 1;
 }
 
 .authImg {
-    height: 50px;
-    width: 50px;
-    border-radius: 100px;
-    border: 1px solid white;
-    background: white;
-    margin-right: 15px;
-    object-fit: cover;
+	height: 50px;
+	width: 50px;
+	border-radius: 100px;
+	border: 1px solid white;
+	background: white;
+	margin-right: 15px;
+	object-fit: cover;
 }
 
 .authWrap {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .authWrapName {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .authWrapLink {
-    font-size: 12px;
-    font-weight: normal;
-    margin: 2px 0;
+	font-size: 12px;
+	font-weight: normal;
+	margin: 2px 0;
 }

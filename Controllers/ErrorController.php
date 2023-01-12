@@ -17,7 +17,7 @@ class ErrorController {
 		}
 	}
 
-	public static function get_view_error ($n = 0) {
+	public static function get_error ($n = 0) {
 		$error_desc = array(
 			0 => 'Unknown error!',
 			1 => 'Дані по цьому користувачу не знайдені!',

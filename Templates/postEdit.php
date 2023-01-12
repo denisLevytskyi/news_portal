@@ -22,7 +22,7 @@
 		<p class="authWrapName">
 			<?php echo $_SESSION['auth']['name']; ?>
 		</p>
-		<a href="createPost.php" class="authWrapLink">
+		<a href="/createPost.php" class="authWrapLink">
 			Створити допис
 		</a>
 		<a href="/editAuth.php" class="authWrapLink">

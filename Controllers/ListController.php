@@ -33,7 +33,7 @@ class ListController {
 			$this->set_category();
 			$this->view_list();
 		} else {
-			ErrorController::get_view_error(15);
+			ErrorController::get_error(15);
 		}
 	}
 }
