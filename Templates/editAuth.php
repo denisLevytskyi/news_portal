@@ -27,7 +27,7 @@
 				<p class="editAuthFormP">
 					Логін
 				</p>
-				<input type="email" class="signFormInp" name="edit_auth_login" value="<?php echo($_SESSION['auth']['login']);?>">
+				<input type="email" class="signFormInp" name="edit_auth_login" value="<?php echo($_SESSION['auth']['login']);?>" readonly>
 				<p class="editAuthFormP">
 					Пароль
 				</p>
