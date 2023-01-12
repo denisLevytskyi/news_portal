@@ -22,13 +22,12 @@ class EditAuthController {
 		$password = $_POST['edit_auth_password_1'];
 		$name = $_POST['edit_auth_name'];
 		$photo = $_SESSION['auth']['photo'];
-		$role = $_SESSION['auth']['role'];
 		$model = new Models\AuthModel();
 		if ( (is_uploaded_file($_FILES['edit_auth_photo']['tmp_name'])) ) {
 			$file = $_FILES['edit_auth_photo'];
 			$photo = $this->set_move_photo($file);
 		}
-		if ( ($model->get_user_update($id, $login, $password, $name, $photo, $role)) ) {
+		if ( ($model->get_user_update($id, $login, $password, $name, $photo)) ) {
 			header('Location: /');
 		} else {
 			ErrorController::get_error(8);
@@ -54,7 +53,7 @@ class EditAuthController {
 	public function get_edit_auth_check () {
 		if (isset($_GET['edit_auth_delete'])) {
 			$this->set_delete();
-		} elseif (empty($_POST['edit_auth_1'])) {
+		} elseif (empty($_POST['edit_auth_id'])) {
 			$this->set_login_check();
 			$this->view_edit_auth();
 		} elseif ($_POST['edit_auth_password_1'] == $_POST['edit_auth_password_2']) {

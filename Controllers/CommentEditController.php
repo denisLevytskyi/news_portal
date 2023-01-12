@@ -10,7 +10,7 @@ class CommentEditController {
 	}
 
 	protected function set_changes () {
-		$id = $_SESSION['comment_edit']['id'];
+		$id = $_POST['comment_edit_id'];
 		$text = $_POST['comment_edit_text'];
 		$model = new Models\CommentModel();
 		if ( ($model->get_comment_update($id, $text)) ) {

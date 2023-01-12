@@ -32,10 +32,11 @@ class PostController {
 
 	protected function set_post_delete () {
 		$model = new Models\PostModel();
-		$id = $_GET['post_del_id'];
-		if ($_SESSION['auth']['id'] != $_SESSION['post']['body']['auth_id'] and $_SESSION['auth']['role'] != '2') {
+		$post_id = $_GET['post_del_id'];
+		$post_auth_id = $model->get_post_auth_id_by_id($post_id);
+		if ($_SESSION['auth']['id'] != $post_auth_id and $_SESSION['auth']['role'] != '2') {
 			ErrorController::get_error(18);
-		} elseif ( ($model->get_post_delete($id)) ) {
+		} elseif ( ($model->get_post_delete($post_id)) ) {
 			header('Location: /');
 		} else {
 			ErrorController::get_error(18);
@@ -53,7 +54,7 @@ class PostController {
 	}
 
 	protected function set_comment_registration () {
-		$post_id = $_SESSION['post']['body']['id'];
+		$post_id = $_POST['post_add_comment_id'];
 		$auth_id = $_SESSION['auth']['id'];
 		$auth_name = $_SESSION['auth']['name'];
 		$auth_photo = $_SESSION['auth']['photo'];
@@ -70,8 +71,11 @@ class PostController {
 
 	protected function set_comment_delete () {
 		$model = new Models\CommentModel();
-		$id = $_GET['post_del_comment_id'];
-		if ( ($model->get_comment_delete($id)) ) {
+		$comment_id = $_GET['post_del_comment_id'];
+		$comment_auth_id = $model->get_comment_auth_id_by_id($comment_id);
+		if ($_SESSION['auth']['id'] != $comment_auth_id and $_SESSION['auth']['role'] != '2') {
+			ErrorController::get_error(23);
+		} elseif ( ($model->get_comment_delete($comment_id)) ) {
 			$location = 'Location: /post.php/?post_id=' . $_SESSION['post']['body']['id'];
 			header($location);
 		} else {

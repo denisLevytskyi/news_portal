@@ -17,9 +17,9 @@ class PostEditController {
 	}
 
 	protected function set_changes () {
-		$id = $_SESSION['post_edit']['id'];
+		$id = $_POST['post_edit_id'];
 		$category = $_POST['post_edit_category'];
-		$photo = $_SESSION['post_edit']['photo'];
+		$photo = $_POST['post_edit_photo_old'];
 		$header = $_POST['post_edit_header'];
 		$text_first = mb_substr($_POST['post_edit_text'], 0, 90) . '...';
 		$text_full = $_POST['post_edit_text'];

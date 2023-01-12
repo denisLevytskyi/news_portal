@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="headerWrap">
 				<img src="/Materials/main_logo.png" alt="img" class="headerWrapImg">
-				<p class="headerWrapP">Головний новосний портал Волині</p>
+				<p class="headerWrapP">Новини Волині</p>
 			</div>
 		</div>
 	</header>
@@ -39,6 +39,11 @@
 				<a href="/?auth_disconnect=1" class="authWrapLink">
 					Вихід з системи
 				</a>
+				<?php if ($_SESSION['auth']['role'] == 2) { ?>
+					<a href="/userList.php" class="authWrapLink">
+						Таблиця користувачів
+					</a>
+				<?php } ?>
 			</div>
 		</section>
 	<?php } ?>
@@ -82,6 +87,9 @@
 					Видалити
 				</a>
 			<?php } ?>
+			<a href="/" class="postA">
+				На головну!
+			</a>
 		</div>
 	</section>
 	<section class="comments">
@@ -118,7 +126,7 @@
 					</p>
 				<?php } ?>
 			</div>
-			<a href="/" class="listA">
+			<a href="/" class="commentsA">
 				На головну!
 			</a>
 		</div>
@@ -132,7 +140,8 @@
 			<?php } else { ?>
 				<form action="/post.php" class="commentForm" method="POST" enctype="application/x-www-form-urlencoded">
 					<textarea rows="5" class="commentFormInp" name="post_add_comment_text" placeholder="Текст коментарю" required></textarea>
-					<button type="confirm" class="commentFormBtn">Додати</button>
+					<input type="text" style="display: none;" name="post_add_comment_id" value="<?php echo $_SESSION['post']['body']['id']; ?>" required>
+					<button class="commentFormBtn">Додати</button>
 				</form>
 				<a href="/" class="commentA">
 					На головну!

@@ -27,6 +27,17 @@ class CommentModel {
 		}
 	}
 
+	public function get_comment_auth_id_by_id ($id) {
+		$connection = Logics\Connection::get_connection();
+		$request = "SELECT auth_id FROM comments WHERE id = '$id'";
+		$rezult = mysqli_query($connection, $request) or header('Location: /');
+		if ( ($record = mysqli_fetch_assoc($rezult)) ) {
+			return $record['auth_id'];
+		} else {
+			return false;
+		}
+	}
+
 	public function get_comment_update ($id, $text) {
 		$connection = Logics\Connection::get_connection();
 		$request = "UPDATE comments SET text = '$text' WHERE id = '$id'";

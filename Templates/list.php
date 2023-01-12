@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="headerWrap">
 				<img src="/Materials/main_logo.png" alt="img" class="headerWrapImg">
-				<p class="headerWrapP">Головний новосний портал Волині</p>
+				<p class="headerWrapP">Новини Волині</p>
 			</div>
 		</div>
 	</header>
@@ -39,6 +39,11 @@
 				<a href="/?auth_disconnect=1" class="authWrapLink">
 					Вихід з системи
 				</a>
+				<?php if ($_SESSION['auth']['role'] == 2) { ?>
+					<a href="/userList.php" class="authWrapLink">
+						Таблиця користувачів
+					</a>
+				<?php } ?>
 			</div>
 		</section>
 	<?php } ?>

@@ -23,7 +23,8 @@
 					Новий текст коментарю:
 				</p>
 				<textarea rows="15" class="postEditFormInp" name="comment_edit_text" required><?php echo $_SESSION['comment_edit']['text']; ?></textarea>
-				<button type="confirm" class="commentEditFormBtn">Змінити</button>
+				<input type="text" style="display: none;" name="comment_edit_id" value="<?php echo $_SESSION['comment_edit']['id']; ?>" required>
+				<button class="commentEditFormBtn">Змінити</button>
 				<a class="commentEditFormA" href="/">На головну!</a>
 			</form>
 		</div>

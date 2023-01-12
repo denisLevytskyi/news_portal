@@ -1,0 +1,71 @@
+body {
+	background: grey;
+}
+
+.listWrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.listWrapForm {
+	width: 230px;
+	margin: 10px;
+	border: 0.5px solid black;
+	border-radius: 10px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+.listWrapFormImg {
+	height: 50px;
+	width: 50px;
+	border-radius: 100px;
+	object-fit: cover;
+	margin: 0 auto 5px;
+}
+
+.listWrapFormP {
+	color: white;
+	font-size: 15px;
+}
+
+.listWrapFormInp {
+	margin-bottom: 5px;
+	padding: 5px;
+	border: 0.5px solid black;
+	border-radius: 5px;
+}
+
+.listWrapFormBtn {
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 5px;
+	background: none;
+	color: white;
+	font-size: 15px;
+	opacity: 0.5;
+}
+
+.listWrapFormBtn:hover {
+	opacity: 1;
+	background: none;
+}
+
+.listWrapFormA {
+	color: white;
+	margin: 5px 0 0 auto;
+	font-size: 12px;
+}
+
+.listA {
+	position: fixed;
+	left: 0;
+	bottom: 20px;
+	padding: 20px 10px;
+	background: black;
+	color: white;
+	cursor: pointer;
+}

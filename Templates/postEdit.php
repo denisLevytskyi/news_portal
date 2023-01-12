@@ -59,7 +59,9 @@
 				Текст:
 			</p>
 			<textarea rows="15" class="postEditFormInp" name="post_edit_text" required><?php echo $_SESSION['post_edit']['text_full']; ?></textarea>
-			<button type="confirm" class="postEditFormBtn">Оновити допис</button>
+			<input type="text" style="display: none;" name="post_edit_id" value="<?php echo $_SESSION['post_edit']['id']; ?>" required>
+			<input type="text" style="display: none;" name="post_edit_photo_old" value="<?php echo $_SESSION['post_edit']['photo']; ?>" required>
+			<button class="postEditFormBtn">Оновити допис</button>
 			<a class="postEditFormA" href="/">На головну!</a>
 		</form>
 	</div>

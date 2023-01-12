@@ -30,7 +30,7 @@ body {
 }
 
 .categoryWrapA {
-	margin: 5px 10px;
+	margin: 2px 5px;
 	padding: 5px 10px;
 	background: black;
 	color: white;
@@ -150,6 +150,11 @@ body {
 .commentsWrapP {
 	margin: 20px 0;
 	text-align: center;
+}
+
+.commentsA {
+	color: blue;
+	cursor: pointer;
 }
 
 .comment .container {

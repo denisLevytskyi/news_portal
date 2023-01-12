@@ -15,6 +15,17 @@ class AuthModel {
 		return false;
 	}
 
+	public function get_all_users () {
+		$users = array();
+		$connection = Logics\Connection::get_connection();
+		$request = "SELECT id, login, name, photo, role FROM users ORDER BY id";
+		$rezult = mysqli_query($connection, $request) or header('Location: /');
+		while ( ($record = mysqli_fetch_assoc($rezult)) ) {
+			$users[] = $record;
+		}
+		return $users;
+	}
+
 	public function get_user_registration ($login, $password, $name, $photo = '/Materials/no_photo.png', $role = '1') {
 		$connection = Logics\Connection::get_connection();
 		$request = "INSERT INTO users (login, password, name, photo, role) VALUES ('$login', '$password', '$name', '$photo', '$role')";
@@ -26,9 +37,15 @@ class AuthModel {
 		}
 	}
 
-	public function get_user_update ($id, $login, $password, $name, $photo, $role) {
+	public function get_user_update ($id, $login, $password, $name, $photo) {
 		$connection = Logics\Connection::get_connection();
-		$request = "UPDATE users SET login = '$login', password = '$password', name = '$name', photo = '$photo', role = '$role' WHERE id = '$id'";
+		$request = "UPDATE users SET login = '$login', password = '$password', name = '$name', photo = '$photo' WHERE id = '$id'";
+		return mysqli_query($connection, $request);
+	}
+
+	public function get_user_update_short ($id, $login, $name, $role) {
+		$connection = Logics\Connection::get_connection();
+		$request = "UPDATE users SET login = '$login', name = '$name', role = '$role' WHERE id = '$id'";
 		return mysqli_query($connection, $request);
 	}
 
