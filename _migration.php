@@ -4,7 +4,7 @@ include 'Logics/Autoload.php';
 $f_connection = Logics\Connection::get_first_connection();
 $bd = Logics\Connection::bd;
 $request0 = "CREATE DATABASE `$bd`";
-$rezult0 = mysqli_query($f_connection, $request0);
+$result0 = mysqli_query($f_connection, $request0);
 
 $connection = Logics\Connection::get_connection();
 $request1 = "CREATE TABLE `users` (
@@ -40,23 +40,23 @@ $request3 = "CREATE TABLE `comments` (
 	PRIMARY KEY (`id`)
 )";
 
-$rezult1 = mysqli_query($connection, $request1);
-$rezult2 = mysqli_query($connection, $request2);
-$rezult3 = mysqli_query($connection, $request3);
+$result1 = mysqli_query($connection, $request1);
+$result2 = mysqli_query($connection, $request2);
+$result3 = mysqli_query($connection, $request3);
 
 echo "<pre>";
 echo "===== DATA BASE ===============================<br>";
-var_dump($rezult0);
+var_dump($result0);
 echo "<br><br>===== USERS TABLE =============================<br>";
-var_dump($rezult1);
+var_dump($result1);
 echo "<br><br>===== POSTS TABLE =============================<br>";
-var_dump($rezult2);
+var_dump($result2);
 echo "<br><br>===== COMMENTS TABLE ==========================<br>";
-var_dump($rezult3);
+var_dump($result3);
 
-if ($rezult1) {
+if ($result1) {
 	$connection = Logics\Connection::get_connection();
 	$request = "INSERT INTO users (login, password, name, photo, role) VALUES ('admin@admin', '123456', 'Admin', '/Materials/no_photo.png', '2')";
-	$rezult = mysqli_query($connection, $request);
+	$result = mysqli_query($connection, $request);
 	echo '= = = = = ADMIN PROFILE: Login->admin@admin Password->123456 = = = = =';
 }

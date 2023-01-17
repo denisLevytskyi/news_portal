@@ -1,5 +1,6 @@
 <?php
 namespace Controllers;
+use Logics\Category;
 use Views;
 use Models;
 
@@ -10,7 +11,7 @@ class ListController {
 	}
 
 	protected function set_category () {
-		$_SESSION['list']['category'] = \Logics\Category::get_category();
+		$_SESSION['list']['category'] = Category::get_category();
 	}
 
 	protected function set_list () {

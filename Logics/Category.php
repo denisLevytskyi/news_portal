@@ -3,7 +3,7 @@ namespace Logics;
 
 class Category {
 	public static function get_category () {
-		$list = array(
+		return array(
 			0 => 'Події на фронті',
 			1 => 'Екстрені новини',
 			2 => 'Спорт',
@@ -16,6 +16,5 @@ class Category {
 			9 => 'Історія',
 			10 => 'Анонси'
 		);
-		return $list;
 	}
 }

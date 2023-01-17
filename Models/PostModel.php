@@ -7,8 +7,8 @@ class PostModel {
 		$posts = array();
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT id, photo, header, text_first FROM posts ORDER BY $order DESC LIMIT 6";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		while ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		while ( ($record = mysqli_fetch_assoc($result)) ) {
 			$posts[] = $record;
 		}
 		return $posts;
@@ -18,8 +18,8 @@ class PostModel {
 		$posts = array();
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT id, photo, header, text_first FROM posts WHERE category = $category ORDER BY id DESC";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		while ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		while ( ($record = mysqli_fetch_assoc($result)) ) {
 			$posts[] = $record;
 		}
 		return $posts;
@@ -29,8 +29,8 @@ class PostModel {
 		$posts = array();
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT id, photo, header, text_first FROM posts ORDER BY id DESC";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		while ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		while ( ($record = mysqli_fetch_assoc($result)) ) {
 			$posts[] = $record;
 		}
 		return $posts;
@@ -39,8 +39,8 @@ class PostModel {
 	public function get_post_by_id ($id) {
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT * FROM posts WHERE id = '$id'";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		if ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		if ( ($record = mysqli_fetch_assoc($result)) ) {
 			$record['time'] = date("y-m-d H:i:s", $record['timestamp']);
 			return $record;
 		} else {
@@ -51,8 +51,8 @@ class PostModel {
 	public function get_post_auth_id_by_id ($id) {
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT auth_id FROM posts WHERE id = '$id'";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		if ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		if ( ($record = mysqli_fetch_assoc($result)) ) {
 			return $record['auth_id'];
 		} else {
 			return false;

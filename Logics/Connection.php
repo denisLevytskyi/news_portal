@@ -8,21 +8,19 @@ class Connection {
 	const bd = 'news_portal';
 
 	public static function get_connection () {
-		$connection = mysqli_connect(
+		return mysqli_connect(
 			self::host,
 			self::user,
 			self::password,
 			self::bd
 		);
-		return $connection;
 	}
 
 	public static function get_first_connection () {
-		$connection = mysqli_connect(
+		return mysqli_connect(
 			self::host,
 			self::user,
 			self::password
 		);
-		return $connection;
 	}
 }

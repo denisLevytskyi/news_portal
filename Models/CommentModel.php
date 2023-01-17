@@ -7,8 +7,8 @@ class CommentModel {
 		$comments = array();
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT * FROM comments WHERE post_id = $post_id ORDER BY id DESC";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		while ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		while ( ($record = mysqli_fetch_assoc($result)) ) {
 			$record['time'] = date("y-m-d H:i:s", $record['timestamp']);
 			$comments[] = $record;
 		}
@@ -18,8 +18,8 @@ class CommentModel {
 	public function get_comment_by_id ($id) {
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT * FROM comments WHERE id = '$id'";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		if ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		if ( ($record = mysqli_fetch_assoc($result)) ) {
 			$record['time'] = date("y-m-d H:i:s", $record['timestamp']);
 			return $record;
 		} else {
@@ -30,8 +30,8 @@ class CommentModel {
 	public function get_comment_auth_id_by_id ($id) {
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT auth_id FROM comments WHERE id = '$id'";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		if ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		if ( ($record = mysqli_fetch_assoc($result)) ) {
 			return $record['auth_id'];
 		} else {
 			return false;

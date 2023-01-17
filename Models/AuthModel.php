@@ -6,8 +6,8 @@ class AuthModel {
 	public function get_user_data ($search_p, $search_v, $select_p, $select_v) {
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT * FROM users WHERE $search_p='$search_v'";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		while ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		while ( ($record = mysqli_fetch_assoc($result)) ) {
 			if ($record[$select_p] == $select_v) {
 				return $record;
 			}
@@ -19,8 +19,8 @@ class AuthModel {
 		$users = array();
 		$connection = Logics\Connection::get_connection();
 		$request = "SELECT id, login, name, photo, role FROM users ORDER BY id";
-		$rezult = mysqli_query($connection, $request) or header('Location: /');
-		while ( ($record = mysqli_fetch_assoc($rezult)) ) {
+		$result = mysqli_query($connection, $request) or header('Location: /');
+		while ( ($record = mysqli_fetch_assoc($result)) ) {
 			$users[] = $record;
 		}
 		return $users;
@@ -29,8 +29,8 @@ class AuthModel {
 	public function get_user_registration ($login, $password, $name, $photo = '/Materials/no_photo.png', $role = '1') {
 		$connection = Logics\Connection::get_connection();
 		$request = "INSERT INTO users (login, password, name, photo, role) VALUES ('$login', '$password', '$name', '$photo', '$role')";
-		$rezult = mysqli_query($connection, $request);
-		if ( $rezult == 1 ) {
+		$result = mysqli_query($connection, $request);
+		if ( $result == 1 ) {
 			return $this->get_user_data('login', $login, 'password', $password);
 		} else {
 			return false;
