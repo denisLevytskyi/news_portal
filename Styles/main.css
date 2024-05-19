@@ -19,12 +19,13 @@ body, button {
 	font-family: 'Roboto', sans-serif;
 	padding: 0;
 	margin: 0;
-	font-size: 17px;
+	font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	font-weight: bold;
+	font-size: 20px;
 }
 
 ul, li {
@@ -42,30 +43,31 @@ button {
 	background: yellow;
 	font-weight: bold;
 	text-align: center;
-	padding: 10px 0;
-	border: 2px solid black;
-	border-radius: 10px;
+	padding: 5px 0;
+	border: 1px solid black;
+	border-radius: 5px;
 	cursor: pointer;
 }
 
 button:hover {
-	background: blue;
+	background: palegreen;
+	transition-duration: 1s;
 }
 
 input, textarea, select {
 	display: block;
 	font-weight: bold;
-	padding: 10px 10px;
-	border: 2px solid black;
-	border-radius: 10px;
+	padding: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
 	cursor: pointer;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .container {
 	max-width: 90%;
 	margin: 0 auto;
-	padding: 5px 10px;
+	padding: 5px;
 }
 
 .header .container {
@@ -88,7 +90,7 @@ input, textarea, select {
 }
 
 section {
-	margin: 25px auto;
+	margin: 20px auto;
 }
 
 .auth {

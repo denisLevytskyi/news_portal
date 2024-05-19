@@ -25,7 +25,7 @@
 				<input type="password" class="registrationFormInp" name="registration_password_2" value="<?php echo($_POST['registration_password_1']);?>" readonly>
 				<input type="text" class="registrationFormInp" name="registration_pin" placeholder="PIN з Email" required>
 				<input type="text" style="display: none;" name="registration_2" value="1" required>
-				<button type="confirm" class="registrationFormBtn">Завершити реєстрацію</button>
+				<button type="submit" class="registrationFormBtn">Завершити реєстрацію</button>
 			</form>
 		</div>
 	</section>

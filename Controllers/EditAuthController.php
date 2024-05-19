@@ -35,7 +35,7 @@ class EditAuthController {
 	}
 
 	protected function set_login_check () {
-		if (empty($_SESSION['auth']['login'])) {
+		if ($_SESSION['auth']['role'] == 0) {
 			ErrorController::get_error(9);
 		}
 	}

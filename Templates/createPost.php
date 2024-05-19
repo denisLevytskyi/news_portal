@@ -59,8 +59,8 @@
 					Текст:
 				</p>
 				<textarea rows="15" class="createFormInp" name="create_post_text" required></textarea>
-				<button type="confirm" class="createFormBtn">Створити допис</button>
-				<a class="createFormA" href="/">На головну!</a>
+				<button type="submit" class="createFormBtn">Створити допис</button>
+				<a class="createFormA" href="/">На головну</a>
 			</form>
 		</div>
 	</section>

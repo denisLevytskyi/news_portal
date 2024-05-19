@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Привіт <?php echo $_SESSION['auth']['name']; ?>!</title>
+	<title>Привіт, <?php echo $_SESSION['auth']['name']; ?></title>
 	<link rel="stylesheet" href="/Styles/main.css">
 	<link rel="stylesheet" href="/Styles/index.css">
 </head>
@@ -88,7 +88,7 @@
 				<?php } ?>
 			</div>
 			<a href="/" class="listA">
-				На головну!
+				На головну
 			</a>
 		</div>
 	</section>

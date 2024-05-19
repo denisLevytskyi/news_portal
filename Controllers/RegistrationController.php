@@ -24,6 +24,16 @@ class RegistrationController {
 		$_SESSION['registration_pin'] = $pin;
 	}
 
+	protected function get_email_check () {
+		$login = $_POST['registration_login'];
+		$model = new Models\AuthModel();
+		if ( ($model->get_user_data('login', $login, 'login', $login)) ) {
+			ErrorController::get_error(11);
+		} else {
+			$this->send_pin();
+		}
+	}
+
 	protected function set_registration () {
 		$login = $_POST['registration_login'];
 		$password = $_POST['registration_password_1'];
@@ -35,16 +45,6 @@ class RegistrationController {
 			header('Location: /');
 		} else {
 			ErrorController::get_error(5);
-		}
-	}
-
-	protected function get_email_check () {
-		$login = $_POST['registration_login'];
-		$model = new Models\AuthModel();
-		if ( ($model->get_user_data('login', $login, 'login', $login)) ) {
-			ErrorController::get_error(11);
-		} else {
-			$this->send_pin();
 		}
 	}
 

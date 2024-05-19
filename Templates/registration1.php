@@ -24,7 +24,7 @@
 				<input type="password" class="registrationFormInp" name="registration_password_1" placeholder="Пароль" required>
 				<input type="password" class="registrationFormInp" name="registration_password_2" placeholder="Пароль" required>
 				<input type="text" style="display: none;" name="registration_1" value="1" required>
-				<button type="confirm" class="registrationFormBtn">Отримати код</button>
+				<button type="submit" class="registrationFormBtn">Отримати код</button>
 			</form>
 		</div>
 	</section>

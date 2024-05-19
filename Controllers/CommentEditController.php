@@ -21,6 +21,14 @@ class CommentEditController {
 		}
 	}
 
+	protected function get_auth_check () {
+		if ($_SESSION['auth']['id'] != $_SESSION['comment_edit']['auth_id'] and $_SESSION['auth']['role'] != 2) {
+			ErrorController::get_error(26);
+		} else {
+			$this->view_comment_edit();
+		}
+	}
+
 	protected function set_comment_data () {
 		$model = new Models\CommentModel();
 		$id = $_GET['comment_edit_id'];
@@ -29,14 +37,6 @@ class CommentEditController {
 			$this->get_auth_check();
 		} else {
 			ErrorController::get_error(25);
-		}
-	}
-
-	protected function get_auth_check () {
-		if ($_SESSION['auth']['id'] != $_SESSION['comment_edit']['auth_id'] and $_SESSION['auth']['role'] != '2') {
-			ErrorController::get_error(26);
-		} else {
-			$this->view_comment_edit();
 		}
 	}
 

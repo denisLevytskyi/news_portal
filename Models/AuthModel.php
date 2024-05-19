@@ -30,7 +30,7 @@ class AuthModel {
 		$connection = Logics\Connection::get_connection();
 		$request = "INSERT INTO users (login, password, name, photo, role) VALUES ('$login', '$password', '$name', '$photo', '$role')";
 		$result = mysqli_query($connection, $request);
-		if ( $result == 1 ) {
+		if ($result) {
 			return $this->get_user_data('login', $login, 'password', $password);
 		} else {
 			return false;

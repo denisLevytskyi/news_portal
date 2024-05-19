@@ -53,7 +53,7 @@
 				<?php } ?>
 			</div>
 			<a href="/" class="listA">
-				На головну!
+				На головну
 			</a>
 		</div>
 	</section>

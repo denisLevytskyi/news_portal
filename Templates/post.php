@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Привіт <?php echo $_SESSION['auth']['name']; ?>!</title>
+	<title>Привіт, <?php echo $_SESSION['auth']['name']; ?></title>
 	<link rel="stylesheet" href="/Styles/main.css">
 	<link rel="stylesheet" href="/Styles/index.css">
 </head>
@@ -88,7 +88,7 @@
 				</a>
 			<?php } ?>
 			<a href="/" class="postA">
-				На головну!
+				На головну
 			</a>
 		</div>
 	</section>
@@ -127,7 +127,7 @@
 				<?php } ?>
 			</div>
 			<a href="/" class="commentsA">
-				На головну!
+				На головну
 			</a>
 		</div>
 	</section>
@@ -144,7 +144,7 @@
 					<button class="commentFormBtn">Додати</button>
 				</form>
 				<a href="/" class="commentA">
-					На головну!
+					На головну
 				</a>
 			<?php } ?>
 		</div>

@@ -35,6 +35,14 @@ class PostEditController {
 		}
 	}
 
+	protected function get_auth_check () {
+		if ($_SESSION['auth']['id'] != $_SESSION['post_edit']['auth_id'] and $_SESSION['auth']['role'] != 2) {
+			ErrorController::get_error(21);
+		} else {
+			$this->view_post_edit();
+		}
+	}
+
 	protected function set_post_data () {
 		$model = new Models\PostModel();
 		$id = $_GET['post_edit_id'];
@@ -43,14 +51,6 @@ class PostEditController {
 			$this->get_auth_check();
 		} else {
 			ErrorController::get_error(20);
-		}
-	}
-
-	protected function get_auth_check () {
-		if ($_SESSION['auth']['id'] != $_SESSION['post_edit']['auth_id'] and $_SESSION['auth']['role'] != '2') {
-			ErrorController::get_error(21);
-		} else {
-			$this->view_post_edit();
 		}
 	}
 

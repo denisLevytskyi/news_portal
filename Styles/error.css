@@ -4,12 +4,12 @@ body {
 
 .error .container {
 	background: white;
-	padding: 10px;
-	border-radius: 10px;
+	padding: 5px;
+	border-radius: 5px;
 }
 
 .error .container * {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .errorA {

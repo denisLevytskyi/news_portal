@@ -23,8 +23,8 @@
 					Новий пароль буде надіслано на вказану пошту:
 				</p>
 				<input type="email" class="resetFormInp" name="reset_login" placeholder="Логін (Email)" required>
-				<button type="confirm" class="resetFormBtn">Відновити</button>
-				<a class="resetFormA" href="/">На головну!</a>
+				<button type="submit" class="resetFormBtn">Відновити</button>
+				<a class="resetFormA" href="/">На головну</a>
 			</form>
 		</div>
 	</section>

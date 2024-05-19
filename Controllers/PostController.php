@@ -10,24 +10,17 @@ class PostController {
 		$view->view_post();
 	}
 
-	protected function set_category () {
-		$_SESSION['post']['category'] = Category::get_category();
-	}
-
-	protected function set_add_views ($id, $views) {
-		$model = new Models\PostModel();
-		$views++;
-		$model->get_post_add_views($id, $views);
-	}
-
-	protected function set_post () {
-		$model = new Models\PostModel();
-		$id = $_GET['post_id'];
-		if ( ($data = $model->get_post_by_id($id)) ) {
-			$_SESSION['post']['body'] = $data;
-			$this->set_add_views($id, $data['views']);
+	protected function set_comment_delete () {
+		$model = new Models\CommentModel();
+		$comment_id = $_GET['post_del_comment_id'];
+		$comment_auth_id = $model->get_comment_auth_id_by_id($comment_id);
+		if ($_SESSION['auth']['id'] != $comment_auth_id and $_SESSION['auth']['role'] != 2) {
+			ErrorController::get_error(23);
+		} elseif ( ($model->get_comment_delete($comment_id)) ) {
+			$location = 'Location: /post.php/?post_id=' . $_SESSION['post']['body']['id'];
+			header($location);
 		} else {
-			ErrorController::get_error(17);
+			ErrorController::get_error(23);
 		}
 	}
 
@@ -35,22 +28,12 @@ class PostController {
 		$model = new Models\PostModel();
 		$post_id = $_GET['post_del_id'];
 		$post_auth_id = $model->get_post_auth_id_by_id($post_id);
-		if ($_SESSION['auth']['id'] != $post_auth_id and $_SESSION['auth']['role'] != '2') {
+		if ($_SESSION['auth']['id'] != $post_auth_id and $_SESSION['auth']['role'] != 2) {
 			ErrorController::get_error(18);
 		} elseif ( ($model->get_post_delete($post_id)) ) {
 			header('Location: /');
 		} else {
 			ErrorController::get_error(18);
-		}
-	}
-
-	protected function set_comment_list () {
-		$post_id = $_GET['post_id'];
-		$model = new Models\CommentModel();
-		if ( ($list = $model->get_comments_by_post_id($post_id)) ) {
-			$_SESSION['post']['comments'] = $list;
-		} else {
-			$_SESSION['post']['comments'] = null;
 		}
 	}
 
@@ -70,17 +53,34 @@ class PostController {
 		}
 	}
 
-	protected function set_comment_delete () {
+	protected function set_comment_list () {
+		$post_id = $_GET['post_id'];
 		$model = new Models\CommentModel();
-		$comment_id = $_GET['post_del_comment_id'];
-		$comment_auth_id = $model->get_comment_auth_id_by_id($comment_id);
-		if ($_SESSION['auth']['id'] != $comment_auth_id and $_SESSION['auth']['role'] != '2') {
-			ErrorController::get_error(23);
-		} elseif ( ($model->get_comment_delete($comment_id)) ) {
-			$location = 'Location: /post.php/?post_id=' . $_SESSION['post']['body']['id'];
-			header($location);
+		if ( ($list = $model->get_comments_by_post_id($post_id)) ) {
+			$_SESSION['post']['comments'] = $list;
 		} else {
-			ErrorController::get_error(23);
+			$_SESSION['post']['comments'] = null;
+		}
+	}
+
+	protected function set_category () {
+		$_SESSION['post']['category'] = Category::get_category();
+	}
+
+	protected function set_add_views ($id, $views) {
+		$model = new Models\PostModel();
+		$views++;
+		$model->get_post_add_views($id, $views);
+	}
+
+	protected function set_post () {
+		$model = new Models\PostModel();
+		$id = $_GET['post_id'];
+		if ( ($data = $model->get_post_by_id($id)) ) {
+			$_SESSION['post']['body'] = $data;
+			$this->set_add_views($id, $data['views']);
+		} else {
+			ErrorController::get_error(17);
 		}
 	}
 

@@ -24,10 +24,10 @@
 				<div class="signFormRem">
 					<input type="checkbox" class="signFormRemCheck" name="sign_remember" checked>
 					<p class="signFormRemP">
-						Запам'ятати мене!
+						Запам'ятати мене
 					</p>
 				</div>
-				<button type="confirm" class="signFormBtn">Увійти</button>
+				<button type="submit" class="signFormBtn">Увійти</button>
 				<a class="signFormA" href="/registration.php">Реєстрація</a>
 				<a class="signFormA" href="/reset.php">Відновити пароль</a>
 			</form>

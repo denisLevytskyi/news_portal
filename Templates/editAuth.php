@@ -41,8 +41,8 @@
 				</p>
 				<input type="file" class="editAuthFormInp" name="edit_auth_photo">
 				<button class="editAuthFormBtn">Редагувати</button>
-				<a class="editAuthFormA" href="/editAuth.php/?edit_auth_delete=1">Видалити профіль!</a>
-				<a class="editAuthFormA" href="/">На головну!</a>
+				<a class="editAuthFormA" href="/editAuth.php/?edit_auth_delete=1">Видалити профіль</a>
+				<a class="editAuthFormA" href="/">На головну</a>
 			</form>
 		</div>
 	</section>

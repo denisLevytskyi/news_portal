@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Користувач: <?php echo $_SESSION['auth']['name']; ?></title>
+	<title>Редагування</title>
 	<link rel="stylesheet" href="/Styles/main.css">
 	<link rel="stylesheet" href="/Styles/postEdit.css">
 </head>
@@ -62,7 +62,7 @@
 			<input type="text" style="display: none;" name="post_edit_id" value="<?php echo $_SESSION['post_edit']['id']; ?>" required>
 			<input type="text" style="display: none;" name="post_edit_photo_old" value="<?php echo $_SESSION['post_edit']['photo']; ?>" required>
 			<button class="postEditFormBtn">Оновити допис</button>
-			<a class="postEditFormA" href="/">На головну!</a>
+			<a class="postEditFormA" href="/">На головну</a>
 		</form>
 	</div>
 </section>
