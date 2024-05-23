@@ -11,12 +11,9 @@ class CategoryEditController {
 
 	protected function set_category_list () {
 		$model = new Models\CategoryModel();
-		if ( ($data = $model->get_all_categories()) ) {
-			$_SESSION['category_edit'] = $data;
-			$this->view_category_edit();
-		} else {
-			ErrorController::get_error(34 );
-		}
+		$data = $model->get_all_categories();
+		$_SESSION['category_edit'] = $data;
+		$this->view_category_edit();
 	}
 
 	protected function set_category_registration () {
@@ -25,7 +22,7 @@ class CategoryEditController {
 		if ( ($model->get_category_registration($name)) ) {
 			header('Location: /categoryEdit.php');
 		} else {
-			ErrorController::get_error(37);
+			ErrorController::get_error(36);
 		}
 	}
 
@@ -36,7 +33,7 @@ class CategoryEditController {
 		if ( ($model->get_category_update($id, $name)) ) {
 			header('Location: /categoryEdit.php');
 		} else {
-			ErrorController::get_error(36);
+			ErrorController::get_error(35);
 		}
 	}
 
@@ -46,7 +43,7 @@ class CategoryEditController {
 		if ( ($model->get_category_delete($id)) ) {
 			header('Location: /categoryEdit.php');
 		} else {
-			ErrorController::get_error(35);
+			ErrorController::get_error(34);
 		}
 	}
 
