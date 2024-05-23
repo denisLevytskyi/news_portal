@@ -6,7 +6,7 @@ use Models;
 class SignController {
 	protected function view_sign () {
 		$view = new Views\View();
-		$view->view_sign();
+		$view->view_template('sign');
 	}
 
 	protected function set_id ($remember = false) {

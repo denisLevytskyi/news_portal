@@ -196,7 +196,7 @@ body {
 }
 
 .categoryListWrapFormInp {
-	width: 250px;
+	width: 260px;
 }
 
 .categoryListWrapItem {
@@ -206,14 +206,21 @@ body {
 }
 
 .categoryListWrapItemFormInp {
-	width: 250px;
+	width: 260px;
 }
 
 .categoryListWrapItemA {
 	color: white;
-	background: black;
+	font-weight: bold;
+	background: grey;
 	border-radius: 100px;
 	padding: 2px 7px;
+	transition-duration: 1s;
+}
+
+.categoryListWrapItemA:hover{
+	background: black;
+	color: red;
 }
 
 .categoryListA {

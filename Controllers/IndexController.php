@@ -6,7 +6,7 @@ use Models;
 class IndexController {
 	protected function view_index () {
 		$view = new Views\View();
-		$view->view_index();
+		$view->view_template('index');
 	}
 
 	protected function set_category () {

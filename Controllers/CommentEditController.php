@@ -6,7 +6,7 @@ use Models;
 class CommentEditController {
 	protected function view_comment_edit () {
 		$view = new Views\View();
-		$view->view_comment_edit();
+		$view->view_template('commentEdit');
 	}
 
 	protected function set_changes () {

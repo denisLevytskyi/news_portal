@@ -6,7 +6,7 @@ use Models;
 class CreatePostController {
 	protected function view_create_post () {
 		$view = new Views\View();
-		$view->view_create_post();
+		$view->view_template('createPost');
 	}
 
 	protected function set_move_photo ($file) {

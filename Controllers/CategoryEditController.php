@@ -6,7 +6,7 @@ use Models;
 class CategoryEditController {
 	protected function view_category_edit () {
 		$view = new Views\View();
-		$view->view_category_edit();
+		$view->view_template('categoryEdit');
 	}
 
 	protected function set_category_list () {

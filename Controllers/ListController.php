@@ -6,7 +6,7 @@ use Models;
 class ListController {
 	protected function view_list () {
 		$view = new Views\View();
-		$view->view_list();
+		$view->view_template('list');
 	}
 
 	protected function set_category () {

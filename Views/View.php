@@ -2,6 +2,12 @@
 namespace Views;
 
 class View {
+	public function view_template ($template) {
+		require_once "Templates/" . $template . ".php";
+	}
+
+
+
 	public function view_error () {
 		require_once "Templates/error.php";
 	}

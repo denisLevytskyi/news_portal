@@ -6,7 +6,7 @@ use Models;
 class PostEditController {
 	protected function view_post_edit () {
 		$view = new Views\View();
-		$view->view_post_edit();
+		$view->view_template('postEdit');
 	}
 
 	protected function set_move_photo ($file) {

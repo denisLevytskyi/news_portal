@@ -6,7 +6,7 @@ use Models;
 class UserListController {
 	protected function view_user_list () {
 		$view = new Views\View();
-		$view->view_user_list();
+		$view->view_template('userList');
 	}
 
 	protected function set_user_list () {

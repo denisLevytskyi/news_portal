@@ -6,12 +6,12 @@ use Models;
 class RegistrationController {
 	protected function view_registration1 () {
 		$view = new Views\View();
-		$view->view_registration1();
+		$view->view_template('registration1');
 	}
 
 	protected function view_registration2 () {
 		$view = new Views\View();
-		$view->view_registration2();
+		$view->view_template('registration2');
 	}
 
 	protected function send_pin () {

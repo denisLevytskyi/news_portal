@@ -6,7 +6,7 @@ use Models;
 class PostController {
 	protected function view_post () {
 		$view = new Views\View();
-		$view->view_post();
+		$view->view_template('post');
 	}
 
 	protected function set_comment_delete () {
