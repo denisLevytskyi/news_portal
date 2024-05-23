@@ -57,6 +57,7 @@ body {
 	margin: 10px 10px 0 0 ;
 	border: 0.5px solid black;
 	border-radius: 5px;
+	overflow: hidden;
 }
 
 .listWrapItemImg {
@@ -188,4 +189,34 @@ body {
 
 .commentFormBtn {
 	width: 200px;
+}
+
+.categoryList .container {
+	width: 300px;
+}
+
+.categoryListWrapFormInp {
+	width: 250px;
+}
+
+.categoryListWrapItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.categoryListWrapItemFormInp {
+	width: 250px;
+}
+
+.categoryListWrapItemA {
+	color: white;
+	background: black;
+	border-radius: 100px;
+	padding: 2px 7px;
+}
+
+.categoryListA {
+	color: blue;
+	cursor: pointer;
 }

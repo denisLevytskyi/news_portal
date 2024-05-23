@@ -41,7 +41,10 @@
 						<p class="listWrapFormP">
 							Рівень доступу
 						</p>
-						<input type="number" step="1" min="1" max="2" class="listWrapFormInp" name="user_list_role" required value="<?php echo $v['role']; ?>">
+						<select class="listWrapFormInp" name="user_list_role" required>
+							<option value="1" <?php echo $v['role'] != 1 ?: 'selected'; ?>>Користувач</option>
+							<option value="2" <?php echo $v['role'] != 2 ?: 'selected'; ?>>Адмін</option>
+						</select>
 						<input type="text" style="display: none;" name="user_list_id" required value="<?php echo $v['id']; ?>">
 						<button class="listWrapFormBtn">
 							Змінити

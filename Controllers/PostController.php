@@ -1,6 +1,5 @@
 <?php
 namespace Controllers;
-use Logics\Category;
 use Views;
 use Models;
 
@@ -64,7 +63,7 @@ class PostController {
 	}
 
 	protected function set_category () {
-		$_SESSION['post']['category'] = Category::get_category();
+		$_SESSION['post']['category'] = CategoryController::get_categories();
 	}
 
 	protected function set_add_views ($id, $views) {

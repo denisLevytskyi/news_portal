@@ -19,15 +19,15 @@
 	<section class="editAuth">
 		<div class="container">
 			<form action="/editAuth.php" class="editAuthForm" method="POST" enctype="multipart/form-data">
-				<input  type="text" style="display: none;" name="edit_auth_id" value="<?php echo($_SESSION['auth']['id']);?>" readonly>
+				<input  type="text" style="display: none;" name="edit_auth_id" value="<?php echo $_SESSION['auth']['id']; ?>" readonly>
 				<p class="editAuthFormP">
 					Ім'я
 				</p>
-				<input type="text" class="editAuthFormInp" name="edit_auth_name" value="<?php echo($_SESSION['auth']['name']);?>">
+				<input type="text" class="editAuthFormInp" name="edit_auth_name" value="<?php echo $_SESSION['auth']['name']; ?>">
 				<p class="editAuthFormP">
 					Логін
 				</p>
-				<input type="email" class="signFormInp" name="edit_auth_login" value="<?php echo($_SESSION['auth']['login']);?>" readonly>
+				<input type="email" class="signFormInp" name="edit_auth_login" value="<?php echo $_SESSION['auth']['login']; ?>" readonly>
 				<p class="editAuthFormP">
 					Пароль
 				</p>

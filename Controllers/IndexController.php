@@ -1,6 +1,5 @@
 <?php
 namespace Controllers;
-use Logics\Category;
 use Views;
 use Models;
 
@@ -11,7 +10,7 @@ class IndexController {
 	}
 
 	protected function set_category () {
-		$_SESSION['index']['category'] = Category::get_category();
+		$_SESSION['index']['category'] = CategoryController::get_categories();
 	}
 
 	protected function set_top_list () {

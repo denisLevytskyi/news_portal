@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Користувач: <?php echo $_SESSION['auth']['name']; ?></title>
+	<title>Створення допису</title>
 	<link rel="stylesheet" href="/Styles/main.css">
 	<link rel="stylesheet" href="/Styles/createPost.css">
 </head>
@@ -22,15 +22,23 @@
 			<p class="authWrapName">
 				<?php echo $_SESSION['auth']['name']; ?>
 			</p>
-			<a href="/createPost.php" class="authWrapLink">
-				Створити допис
-			</a>
 			<a href="/editAuth.php" class="authWrapLink">
 				Редагування даних
 			</a>
 			<a href="/?auth_disconnect=1" class="authWrapLink">
 				Вихід з системи
 			</a>
+			<?php if ($_SESSION['auth']['role'] == 2) { ?>
+				<a href="/createPost.php" class="authWrapLink">
+					Створити допис
+				</a>
+				<a href="/userList.php" class="authWrapLink">
+					Таблиця користувачів
+				</a>
+				<a href="/categoryEdit.php" class="authWrapLink">
+					Редагування категорій
+				</a>
+			<?php } ?>
 		</div>
 	</section>
 	<section class="create">
@@ -44,8 +52,8 @@
 					Категорія статті:
 				</p>
 				<select class="createFormInp" name="create_post_category" id="list" required>
-					<?php $list = Logics\Category::get_category();
-					foreach ($list as $k => $v) { ?>
+					<option value=""></option>
+					<?php foreach (Controllers\CategoryController::get_categories() as $k => $v) { ?>
 						<option value="<?php echo $k; ?>">
 							<?php echo $v; ?>
 						</option>

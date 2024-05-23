@@ -30,9 +30,6 @@
 				<p class="authWrapName">
 					<?php echo $_SESSION['auth']['name']; ?>
 				</p>
-				<a href="/createPost.php" class="authWrapLink">
-					Створити допис
-				</a>
 				<a href="/editAuth.php" class="authWrapLink">
 					Редагування даних
 				</a>
@@ -40,8 +37,14 @@
 					Вихід з системи
 				</a>
 				<?php if ($_SESSION['auth']['role'] == 2) { ?>
+					<a href="/createPost.php" class="authWrapLink">
+						Створити допис
+					</a>
 					<a href="/userList.php" class="authWrapLink">
 						Таблиця користувачів
+					</a>
+					<a href="/categoryEdit.php" class="authWrapLink">
+						Редагування категорій
 					</a>
 				<?php } ?>
 			</div>

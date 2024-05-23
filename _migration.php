@@ -16,7 +16,12 @@ $request1 = "CREATE TABLE `users` (
 	`role` VARCHAR(100) DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )";
-$request2 = "CREATE TABLE `posts` (
+$request2 = "CREATE TABLE `categories` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(100) DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)";
+$request3 = "CREATE TABLE `posts` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`auth_id` VARCHAR(100) DEFAULT NULL,
 	`auth_name` VARCHAR(100) DEFAULT NULL,
@@ -29,7 +34,7 @@ $request2 = "CREATE TABLE `posts` (
 	`views` VARCHAR(100) DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )";
-$request3 = "CREATE TABLE `comments` (
+$request4 = "CREATE TABLE `comments` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`post_id` VARCHAR(100) DEFAULT NULL,
 	`auth_id` VARCHAR(100) DEFAULT NULL,
@@ -43,16 +48,19 @@ $request3 = "CREATE TABLE `comments` (
 $result1 = mysqli_query($connection, $request1);
 $result2 = mysqli_query($connection, $request2);
 $result3 = mysqli_query($connection, $request3);
+$result4 = mysqli_query($connection, $request4);
 
 echo "<pre>";
 echo "===== DATA BASE ===============================<br>";
 var_dump($result0);
 echo "<br><br>===== USERS TABLE =============================<br>";
 var_dump($result1);
-echo "<br><br>===== POSTS TABLE =============================<br>";
+echo "<br><br>===== CATEGORIES TABLE ========================<br>";
 var_dump($result2);
+echo "<br><br>===== POSTS TABLE =============================<br>";
+var_dump($result4);
 echo "<br><br>===== COMMENTS TABLE ==========================<br>";
-var_dump($result3);
+var_dump($result4);
 
 if ($result1) {
 	$connection = Logics\Connection::get_connection();

@@ -53,4 +53,8 @@ class View {
 	public function view_user_list () {
 		require_once "Templates/userList.php";
 	}
+
+	public function view_category_edit () {
+		require_once "Templates/categoryEdit.php";
+	}
 }

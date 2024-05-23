@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ERROR</title>
+	<title>Помилка...</title>
 	<link rel="stylesheet" href="/Styles/main.css">
 	<link rel="stylesheet" href="/Styles/error.css">
 </head>
@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="headerWrap">
 				<img src="/Materials/main_logo.png" alt="img" class="headerWrapImg">
-				<p class="headerWrapP">Сторінка помилки</p>
+				<p class="headerWrapP">Помилка...</p>
 			</div>
 		</div>
 	</header>
