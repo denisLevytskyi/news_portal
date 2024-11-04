@@ -71,6 +71,7 @@ input, textarea, select {
 }
 
 .header .container {
+	max-width: none;
 	padding: 0;
 }
 
